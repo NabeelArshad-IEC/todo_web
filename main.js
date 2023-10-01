@@ -43,12 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const editButton = listItem.querySelector('.edit');
             editButton.addEventListener('click', () => {
-                const newText = prompt('Edit task:', task.text);
-                if (newText !== null) {
-                    task.text = newText.trim();
-                    saveTasks();
-                    renderTasks();
-                }
+                const taskTextElement = listItem.querySelector('.task');
+                const editText = document.createElement('input');
+                editText.type = 'text';
+                editText.value = task.text;
+                editText.classList.add('edit-text');
+            
+                // Replace the task text with the input field for editing
+                taskTextElement.innerHTML = '';
+                taskTextElement.appendChild(editText);
+            
+                // Focus on the input field
+                editText.focus();
+            
+                // Add an event listener to save changes when Enter is pressed
+                editText.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        task.text = editText.value.trim();
+                        saveTasks();
+                        renderTasks();
+                    }
+                });
             });
 
             const deleteButton = listItem.querySelector('.delete');
