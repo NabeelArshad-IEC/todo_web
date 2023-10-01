@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-3">To-Do List</h1>
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" id="taskInput" placeholder="Add a new task">
+            <div class="input-group-append">
+                <button class="btn btn-success" id="addTask"><i class="fa fa-plus-square mr-2"></i>Add</button>
+            </div>
+        </div>
+        <ul id="taskList" class="list-group mt-3">
+
+        </ul>
+        <button class="btn btn-danger mt-3" id="clearAll"><i class="fa fa-trash mr-2"></i>Clear All</button>
+    </div>
+
+  
+    <script src="main.js"></script>
+</body>
