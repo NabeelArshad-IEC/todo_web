@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTask() {
         const taskText = taskInput.value.trim();
         if (taskText === '') {
-            alert('Please enter a task before adding.'); // Display a warning message
+            alert('Please enter a task before adding.'); 
             return;
         }
 
@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 editText.value = task.text;
                 editText.classList.add('edit-text');
             
-                // Replace the task text with the input field for editing
+               
                 taskTextElement.innerHTML = '';
                 taskTextElement.appendChild(editText);
             
-                // Focus on the input field
+               
                 editText.focus();
             
-                // Add an event listener to save changes when Enter is pressed
+            
                 editText.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         task.text = editText.value.trim();
