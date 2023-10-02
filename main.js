@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTask() {
         const taskText = taskInput.value.trim();
         if (taskText === '') {
-            alert('Please enter a task before adding.'); 
+            alert('Please enter a task before adding.');
             return;
         }
 
@@ -48,15 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 editText.type = 'text';
                 editText.value = task.text;
                 editText.classList.add('edit-text');
-            
-               
+
                 taskTextElement.innerHTML = '';
                 taskTextElement.appendChild(editText);
-            
-               
+
                 editText.focus();
-            
-            
+
                 editText.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         task.text = editText.value.trim();
@@ -87,6 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function clearAllTasks() {
+        if (tasks.length === 0) {
+            alert('The task list is already empty.');
+            return;
+        }
+
         const confirmed = confirm('Are you sure you want to clear all tasks?');
         if (confirmed) {
             tasks = [];
